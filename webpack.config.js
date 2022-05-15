@@ -4,7 +4,7 @@ const path = require('path');
 const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
 
-const ResolvePath = (p)=>{
+const ResolvePath = (p) => {
 	return path.resolve(__dirname, p);
 }
 
@@ -15,10 +15,10 @@ module.exports = {
 	resolve: {
 		alias: {
 			svelte: path.dirname(require.resolve('svelte/package.json')),
-			'@': ResolvePath("./"),
 			'~': ResolvePath("./"),
 			'~~': ResolvePath("./"),
-			'@@': ResolvePath("./"),
+			'@': ResolvePath("./src"),
+			'@@': ResolvePath("./src"),
 		},
 		extensions: ['.mjs', '.js', '.svelte'],
 		mainFields: ['svelte', 'browser', 'module', 'main']

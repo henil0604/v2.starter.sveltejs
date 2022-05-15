@@ -66,3 +66,8 @@ button:not(:disabled):active {
 button:focus {
   border-color: #666;
 }
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+}

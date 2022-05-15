@@ -39,8 +39,8 @@ module.exports = {
 							dev: !prod
 						},
 						emitCss: prod,
-						hotReload: !prod
-					}
+						hotReload: !prod,
+					},
 				}
 			},
 			{
@@ -56,6 +56,14 @@ module.exports = {
 				resolve: {
 					fullySpecified: false
 				}
+			},
+			{
+				test: /\.s[ac]ss$/i,
+				use: [
+					"style-loader",
+					"css-loader",
+					"sass-loader"
+				]
 			}
 		]
 	},

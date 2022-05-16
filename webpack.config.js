@@ -8,6 +8,14 @@ const ResolvePath = (p) => {
 	return path.resolve(__dirname, p);
 }
 
+const StringReplace = [
+	{
+		search: "@api",
+		replace: "https://localhost:4001/api"
+	}
+]
+
+
 module.exports = {
 	entry: {
 		'build/bundle': ['./src/main.js']
@@ -64,6 +72,15 @@ module.exports = {
 					"css-loader",
 					"sass-loader"
 				]
+			},
+			{
+				test: /\.(js|svelte|ts|css|scss|json)$/,
+				loader: 'string-replace-loader',
+				options: {
+					multiple: [
+						...StringReplace
+					]
+				}
 			}
 		]
 	},
